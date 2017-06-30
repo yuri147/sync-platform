@@ -21,11 +21,6 @@
                     <Option value="女装">女装</Option>
                 </Select>
             </Form-item>
-            <!--<Form-item label="商品图片">-->
-            <Upload action="//jsonplaceholder.typicode.com/posts/">
-        <Button type="ghost" icon="ios-cloud-upload-outline">上传文件</Button>
-    </Upload>
-            <!--</Form-item>-->
             <Form-item>
                 <Button type="primary" @click="submit">提交</Button>
                 <!--<Button type="ghost" style="margin-left: 8px">取消</Button>-->
@@ -57,7 +52,7 @@ export default {
                 }
             });
 
-        }        
+        }
     },
     data() {
         return {

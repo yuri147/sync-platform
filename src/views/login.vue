@@ -8,14 +8,14 @@
 
 .login-form {
     background: #fff;
-    width: 500px;
+    width: 600px;
     border-radius: 5px;
     text-align: center;
     height: 100px;
     padding: 30px;
     position: absolute;
     left: 50%;
-    margin-left: -250px;
+    margin-left: -300px;
     top: 50%;
     margin-top: -50px;
     box-shadow: #dadada 2px 7px 4px 3px;
