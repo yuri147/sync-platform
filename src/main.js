@@ -59,7 +59,7 @@ Vue.prototype.$ajax = axios;
 const store = new Vuex.Store({
     state: {
         user: {},
-        api: 'http://localhost:3000/api',
+        api: 'http://106.14.176.178:3000/api',
         imgPath: 'http://orj2fu6qw.bkt.clouddn.com/'
     },
     getters: {
