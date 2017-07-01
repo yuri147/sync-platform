@@ -5,7 +5,7 @@
   "main": "main.js",
   "scripts": {
     "init": "webpack --progress --config webpack.dev.config.js",
-    "dev": "webpack-dev-server --content-base ./ --open --inline --hot --compress --history-api-fallback --config webpack.dev.config.js --port 88 --host 0.0.0.0 ",
+    "dev": "webpack-dev-server --content-base ./ --open --inline --hot --compress --history-api-fallback --config webpack.dev.config.js --port 88 --host 0.0.0.0 --public 0.0.0.0:88 ",
     "build": "webpack --progress --hide-modules --config webpack.prod.config.js",
     "lint": "eslint --fix --ext .js,.vue src"
   },
