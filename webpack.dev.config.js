@@ -15,7 +15,8 @@ module.exports = merge(webpackBaseConfig, {
     output: {
         publicPath: '/dist/',
         filename: '[name].js',
-        chunkFilename: '[name].chunk.js'
+        chunkFilename: '[name].chunk.js',
+        disableHostCheck: true
     },
     plugins: [
         new ExtractTextPlugin({
