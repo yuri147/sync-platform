@@ -1,6 +1,6 @@
 {
-  "name": "Uroption",
-  "version": "1.0.0",
+  "name": "sync-platform",
+  "version": "1.0.1",
   "description": "",
   "main": "main.js",
   "scripts": {

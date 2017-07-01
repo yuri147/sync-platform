@@ -103,7 +103,7 @@ export default {
             showOrder: false,
             showItem: false,
             menu: {}
-        }
+        };
     },
     methods: {
         goLevel1: function (event) {
@@ -118,7 +118,7 @@ export default {
             } else if (event == 'logout') {
                 this.initMenu();
                 this.$store.state.user = null;
-                sessionStorage.setItem("spf.user", null);
+                sessionStorage.setItem('spf.user', null);
                 this.$router.push({ path: '/login' });
             }
             this.$emit('menuSelect', this.menu);
@@ -133,10 +133,10 @@ export default {
             }
             this.$emit('menuSelect', this.menu);
         },
-        initMenu: function (event) {
+        initMenu: function () {
             this.showOrder = false;
             this.showItem = false;
         }
     }
-}
+};
 </script>

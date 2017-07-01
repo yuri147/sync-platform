@@ -34,9 +34,9 @@ export default {
     beforeCreate: function () {
         this.$ajax.get(this.$store.state.api + '/item/list').then(response => {
             this.itemData = response.data.result;
-        }, response => {
+        }, () => {
             this.itemData = null;
-        })
+        });
     },
     props: ['itemID'],
     methods: {
@@ -54,7 +54,7 @@ export default {
                         } else {
                             this.$Message.error('新增失败');
                         }
-                    }, response => {
+                    }, () => {
                         this.$Message.error('新增失败');
                     })
                 }
