@@ -6,10 +6,10 @@
     <div>
         <head-top @menuSelect="menuSelect"></head-top>
         <welcome v-if="showWelcome"></welcome>
-        <order-list v-if="showOrderList" :listData="orderTableData"></order-list>
+        <order-list v-if="showOrderList"></order-list>
         <order-insert v-if="showOrderInsert"></order-insert>
         <item-insert v-if="showItemInsert"></item-insert>
-        <item-list v-if="showItemList" :listData="itemTableData"></item-list>
+        <item-list v-if="showItemList" ></item-list>
         <item-img v-if="showItemImg" ></item-img>
         <foot-bottom></foot-bottom>
     </div>
@@ -42,7 +42,6 @@ export default {
             showItemInsert: false,
             showItemList:false,
             showItemImg:false,
-            orderTableData: [],
             itemTableData:[]
         }
     },
@@ -53,34 +52,17 @@ export default {
                 this.showOrderInsert = true;
             }
             if (event.level1 == 1 && event.level2 == 2) {
-                this.showOrderList = true;
-                this.refreshOrderList();
+                this.showOrderList = true;                
             }
             if (event.level1 == 2 && event.level2 == 1) {
                 this.showItemInsert = true;
             }
             if (event.level1 == 2 && event.level2 == 2) {
-                this.showItemList = true;
-                this.refreshItemList();
+                this.showItemList = true;                
             }
             if (event.level1 == 2 && event.level2 == 3) {
-                console.info(111);
                 this.showItemImg = true;
             }
-        },
-        refreshOrderList: function () {
-            this.$ajax.get(this.$store.state.api + '/order/list').then(response => {
-                this.orderTableData = response.data.result;
-            }, response => {
-                this.orderTableData = null;
-            })
-        },
-        refreshItemList: function () {
-            this.$ajax.get(this.$store.state.api + '/item/list').then(response => {
-                this.itemTableData = response.data.result;
-            }, response => {
-                this.itemTableData = null;
-            })
         },
         init: function () {
             this.showWelcome = false;

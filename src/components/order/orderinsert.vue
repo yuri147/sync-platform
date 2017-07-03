@@ -10,7 +10,7 @@
     <div class="insert">
         <Form ref="formItem" :model="formItem" :label-width="130" :rules="ruleInline">
             <Form-item label="商品" prop="itemID">
-                <Select v-model="formItem.itemID" filterable placeholder="请选择">
+                <Select v-model="formItem.itemID"  label-in-value filterable placeholder="请选择" @on-change="itemChange">
                     <Option v-for="item in itemData" :value="item.itemID" :key="itemID">{{ item.itemName }}</Option>
                 </Select>
             </Form-item>
@@ -46,9 +46,11 @@ export default {
                 if (valid) {
                     this.$ajax.post(this.$store.state.api + '/order/insert', {
                         itemID: this.formItem.itemID,
+                        itemName: this.formItem.itemName,
                         buyerName: this.formItem.buyerName,
                         buyerPhone: this.formItem.buyerPhone,
                         buyerAddress: this.formItem.buyerAddress,
+                        creatUser: this.$store.state.user.userName
                     }).then(response => {
                         if (response.data.result == 'success') {
                             this.$Message.success('新增成功');
@@ -63,6 +65,9 @@ export default {
                     })
                 }
             });
+        },
+        itemChange(item){
+            this.formItem.itemName = item.label;
         }
     },
     data() {
